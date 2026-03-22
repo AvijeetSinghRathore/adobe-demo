@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar CRM - Lead Record</title>
+    <link rel="stylesheet" href="crm-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+</head>
+<body>
+    <div class="crm-app">
+        <!-- Sidebar Menu -->
+        <aside class="crm-sidebar">
+            <div class="crm-logo-container">
+                <span class="material-symbols-outlined logo-icon">language</span>
+                <span class="crm-logo-text">Stellar CRM</span>
+            </div>
+            <nav class="crm-nav">
+                <a href="#" class="nav-item"><span class="material-symbols-outlined nav-icon">dashboard</span> Dashboard</a>
+                <a href="#" class="nav-item active"><span class="material-symbols-outlined nav-icon">group</span> Contacts</a>
+                <a href="#" class="nav-item"><span class="material-symbols-outlined nav-icon">business</span> Companies</a>
+                <a href="#" class="nav-item"><span class="material-symbols-outlined nav-icon">payments</span> Deals</a>
+                <a href="#" class="nav-item"><span class="material-symbols-outlined nav-icon">monitoring</span> Reports</a>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <div class="crm-main">
+            <!-- Top Header -->
+            <header class="crm-header">
+                <div class="search-bar">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <input type="text" placeholder="Search contacts, deals, or companies...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn tooltip"><span class="material-symbols-outlined">add</span></button>
+                    <button class="icon-btn tooltip"><span class="material-symbols-outlined">notifications</span></button>
+                    <div class="user-avatar">AJ</div>
+                </div>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="crm-content">
+                
+                <!-- Lead Header & Pipeline -->
+                <div class="lead-header-card">
+                    <div class="lead-header-row">
+                        <div class="lead-info-big">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Lead Avatar" class="lead-huge-avatar">
+                            <div>
+                                <h1 class="lead-name">Michael Chang</h1>
+                                <p class="lead-title">Vice President of Engineering at <strong>Acme Corp</strong></p>
+                            </div>
+                        </div>
+                        <div class="lead-actions">
+                            <button class="btn btn-secondary"><span class="material-symbols-outlined">edit</span> Note</button>
+                            <button class="btn btn-secondary"><span class="material-symbols-outlined">mail</span> Email</button>
+                            <button class="btn btn-secondary"><span class="material-symbols-outlined">call</span> Call</button>
+                            <button class="btn btn-primary"><span class="material-symbols-outlined">event</span> Meeting</button>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Stage Tracker -->
+                    <div class="pipeline-container">
+                        <div class="pipeline-stage completed">Discovery</div>
+                        <div class="pipeline-connector completed"></div>
+                        <div class="pipeline-stage completed">Demo</div>
+                        <div class="pipeline-connector completed"></div>
+                        <div class="pipeline-stage completed">Proposal</div>
+                        <div class="pipeline-connector active"></div>
+                        <div class="pipeline-stage active-stage">Contracting</div>
+                        <div class="pipeline-connector pending"></div>
+                        <div class="pipeline-stage pending">Closed Won</div>
+                    </div>
+                </div>
+
+                <!-- Three Column Grid -->
+                <div class="crm-grid">
+                    
+                    <!-- Left Column: About -->
+                    <div class="crm-col">
+                        <div class="crm-card">
+                            <h3 class="card-title">About this contact</h3>
+                            <div class="about-list">
+                                <div class="about-item">
+                                    <span class="about-label">Email</span>
+                                    <span class="about-value blue-text">michael.c@acmecorp.com</span>
+                                </div>
+                                <div class="about-item">
+                                    <span class="about-label">Phone</span>
+                                    <span class="about-value">(555) 123-4567</span>
+                                </div>
+                                <div class="about-item">
+                                    <span class="about-label">Location</span>
+                                    <span class="about-value">San Francisco, CA</span>
+                                </div>
+                                <div class="about-item">
+                                    <span class="about-label">Lead Score</span>
+                                    <span class="about-value score">94 (Hot)</span>
+                                </div>
+                                <div class="about-item">
+                                    <span class="about-label">Last Contacted</span>
+                                    <span class="about-value">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle Column: Timeline -->
+                    <div class="crm-col crm-col-main">
+                        <div class="crm-card">
+                            <div class="timeline-header">
+                                <h3 class="card-title">Activity</h3>
+                                <div class="filter-tabs">
+                                    <span class="filter active">All</span>
+                                    <span class="filter">Notes</span>
+                                    <span class="filter">Emails</span>
+                                    <span class="filter">Calls</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-icon icon-meeting"><span class="material-symbols-outlined">event_available</span></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-meta"><strong>You</strong> had a meeting with <strong>Michael Chang</strong> • Yesterday at 2:00 PM</div>
+                                        <div class="timeline-body">
+                                            Pricing call went well. Michael is happy with the Enterprise tier. We need to send over the final agreement to get sign-off from his legal team this week.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-icon icon-email"><span class="material-symbols-outlined">mail</span></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-meta"><strong>You</strong> sent an email to <strong>Michael Chang</strong> • 3 days ago</div>
+                                        <div class="timeline-body">
+                                            "Subject: Follow-up on Acme Corp Proposal - Enterprise Plan. Hi Michael..."
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Deals & Documents -->
+                    <div class="crm-col">
+                        <!-- TARGET FEATURE: AGREEMENTS SECTION (Moved to top of column) -->
+                        <div class="crm-card highlight-card">
+                            <h3 class="card-title">Agreements</h3>
+                            <div class="agreements-section">
+                                <div class="adobe-ai-banner" style="display: flex; flex-direction: column; align-items: flex-start;">
+                                    <div class="ai-banner-header" style="margin-bottom: 12px; gap: 8px; width: 100%;">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" width="22">
+                                        <span class="ai-banner-title" style="font-size: 16px;">
+                                            <span class="material-symbols-outlined ai-sparkle" style="font-size: 18px;">auto_awesome</span> 
+                                            AI Assisted Documentation
+                                        </span>
+                                    </div>
+                                    <p class="ai-banner-text" style="font-size: 13px; margin-bottom: 20px; line-height: 1.5;">
+                                        Create a custom Adobe PDF Space and get insights from contracts similar to <em>Acme Corp</em> and your organization guidelines to draft a comprehensive Agreement.
+                                    </p>
+                                    <button class="btn btn-full-adobe" id="btn-adobe-connect" onclick="handleAdobeConnect()" style="width: 100%; padding: 12px; font-weight: 600; font-size: 14px; box-shadow: 0 4px 10px rgba(2,101,220,0.3); border-radius: 24px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                        Connect
+                                    </button>
+                                    <p style="font-size: 11px; color: #666; width: 100%; text-align: center; margin-top: 12px; margin-bottom: 0;">
+                                        Powered by <strong>Adobe Acrobat PDF Spaces</strong>
+                                    </p>
+                                </div>
+                                <script>
+                                    function handleAdobeConnect() {
+                                        document.getElementById('adobe-auth-modal').style.display = 'flex';
+                                        // Advance tour if active
+                                        if (document.querySelector('.driver-active-element') && window.crmTour) {
+                                            window.crmTour.moveNext();
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="crm-card">
+                            <h3 class="card-title">Deals (1)</h3>
+                            <div class="deal-item">
+                                <span class="material-symbols-outlined deal-icon">payments</span>
+                                <div class="deal-info">
+                                    <h4>Acme Corp - Enterprise Q3</h4>
+                                    <p>$24,000 • Contracting stage</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Company section -->
+                        <div class="crm-card">
+                            <h3 class="card-title">Company</h3>
+                            <div class="company-card">
+                                <div class="company-logo">A</div>
+                                <div class="company-info">
+                                    <h4>Acme Corp</h4>
+                                    <p>acmecorp.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Adobe Auth Modal -->
+    <div id="adobe-auth-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeAdobeAuth()"><span class="material-symbols-outlined">close</span></button>
+            <div class="modal-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="Adobe Acrobat" class="modal-logo">
+                <h2>Sign in</h2>
+                <p>New user? <a href="#">Create an account</a></p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="input-group">
+                    <label>Email address</label>
+                    <input type="email" value="michael.c@acmecorp.com" disabled>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+                
+                <button class="btn-full-adobe" onclick="completeAuth()">Continue</button>
+                
+                <div class="modal-divider">
+                    <span>Or</span>
+                </div>
+                
+                <button id="btn-sso" class="btn-outline-adobe" onclick="completeAuth()"><span class="material-symbols-outlined" style="font-size: 16px;">business</span> Continue with SSO</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-card {
+            background-color: #fff;
+            width: 400px;
+            border-radius: 8px;
+            padding: 32px 32px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-header {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        .modal-logo {
+            width: 32px;
+            margin-bottom: 16px;
+        }
+        .modal-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #111;
+        }
+        .modal-header p {
+            font-size: 13px;
+            color: #555;
+        }
+        .modal-header a {
+            color: #0265DC;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .input-group input:disabled {
+            background-color: #F5F5F5;
+            color: #666;
+        }
+        .btn-full-adobe {
+            width: 100%;
+            background-color: #0265DC; /* Adobe Sign-in Blue */
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .btn-full-adobe:hover {
+            background-color: #004fb0;
+        }
+        .modal-divider {
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+            color: #777;
+            font-size: 12px;
+        }
+        .modal-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0; right: 0;
+            border-top: 1px solid #DDD;
+            z-index: 1;
+        }
+        .modal-divider span {
+            background-color: #fff;
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+        }
+        .btn-outline-adobe {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid #CCC;
+            color: #333;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-outline-adobe:hover {
+            background-color: #F8F8F8;
+            border-color: #999;
+        }
+
+        /* --- Adobe AI Banner Styles --- */
+        @keyframes glowingPanel {
+            0% { box-shadow: 0 0 5px rgba(20, 115, 230, 0.1); border-color: rgba(20, 115, 230, 0.3); }
+            50% { box-shadow: 0 0 16px rgba(20, 115, 230, 0.5); border-color: rgba(20, 115, 230, 0.7); }
+            100% { box-shadow: 0 0 5px rgba(20, 115, 230, 0.1); border-color: rgba(20, 115, 230, 0.3); }
+        }
+
+        .adobe-ai-banner {
+            background: linear-gradient(135deg, rgba(235, 16, 0, 0.04) 0%, rgba(20, 115, 230, 0.08) 100%);
+            border: 1px solid rgba(20, 115, 230, 0.3);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 4px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: glowingPanel 2.5s infinite;
+        }
+        .adobe-ai-banner:hover {
+            box-shadow: 0 6px 16px rgba(20, 115, 230, 0.15);
+            border-color: rgba(20, 115, 230, 0.6);
+            transform: translateY(-2px);
+        }
+        .adobe-ai-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF0000, #1473E6, #9D00FF);
+        }
+        .ai-banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .ai-banner-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ai-sparkle {
+            color: #1473E6;
+            font-size: 20px;
+            animation: pulse 2s infinite;
+        }
+        .ai-banner-text {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+    </style>
+    <script>
+        function closeAdobeAuth() {
+            document.getElementById('adobe-auth-modal').style.display = 'none';
+        }
+
+        function completeAuth() {
+            closeAdobeAuth();
+            // Close the tutorial dialog if it's active
+            if (window.crmTour) {
+                window.crmTour.destroy();
+            }
+            const btn = document.getElementById('btn-adobe-connect');
+            btn.innerHTML = '<span class="material-symbols-outlined" style="animation: spin 1.5s linear infinite;">sync</span> Agreement Creation in Progress';
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.8';
+            window.open('adobe-space.html', '_blank');
+        }
+    </script>
+
+    <!-- Guided Tour Button -->
+    <button id="start-tour-btn" style="position: fixed; bottom: 24px; right: 24px; z-index: 9998; background: #0265DC; color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; box-shadow: 0 4px 12px rgba(2,101,220,0.4); display: flex; align-items: center; gap: 8px; font-size: 14px; transition: transform 0.2s;">
+        <span class="material-symbols-outlined" style="font-size: 20px;">lightbulb</span> Take a Tour
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const driver = window.driver.js.driver;
+            
+            const tour = driver({
+                showProgress: true,
+                steps: [
+                    {
+                        popover: {
+                            title: 'Demo CRM page for a lead',
+                            description: 'Welcome to Stellar CRM. A Sales Rep uses this page to manage their deals and interactions with clients.',
+                            side: "left", align: 'start'
+                        }
+                    },
+                    {
+                        element: '.lead-header-card',
+                        popover: {
+                            title: 'Acme Corp Deal Pipeline',
+                            description: 'We are currently in the <strong>Contracting</strong> stage and Sales Rep now wants to create an agreement to finally close the deal.',
+                            side: "bottom", align: 'start'
+                        }
+                    },
+                    {
+                        element: '.highlight-card',
+                        popover: {
+                            title: 'The Intelligent Upgrade',
+                            description: 'Sales Rep finds a new button to create an agreement. This is the new connector Adobe has introduced. Enterprises can add this connector to create documents using AI capabilities provided by Adobe PDF Space.',
+                            side: "left", align: 'start'
+                        }
+                    },
+                    {
+                        element: '#btn-adobe-connect',
+                        popover: {
+                            title: 'Let\'s Connect',
+                            description: 'Click this button to see how the connection happens in reality!',
+                            side: "bottom", align: 'start',
+                            onNextClick: () => {
+                                handleAdobeConnect();
+                            }
+                        }
+                    },
+                    {
+                        element: '#btn-sso',
+                        popover: {
+                            title: 'Single Sign-On',
+                            description: 'Click on Continue with SSO to authenticate securely.',
+                            side: "bottom", align: 'start'
+                        }
+                    }
+                ]
+            });
+
+            window.crmTour = tour;
+
+            document.getElementById('start-tour-btn').addEventListener('click', () => {
+                tour.drive();
+            });
+            
+            // Optionally auto-start if never seen
+            if (!localStorage.getItem('crm_tour_seen')) {
+                localStorage.setItem('crm_tour_seen', 'true');
+                tour.drive();
+            }
+        });
+    </script>
+</body>
+</html>

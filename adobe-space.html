@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Acrobat - PDF Space</title>
+    <link rel="stylesheet" href="adobe-space.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="icon-btn tooltip"><span class="material-symbols-outlined">menu</span></button>
+                <button class="icon-btn tooltip"><span class="material-symbols-outlined">home</span></button>
+                <div class="space-title-dropdown">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="Acrobat Logo"
+                        class="acrobat-logo">
+                    <span class="space-title">Acme Corp Agreement Optimization</span>
+                    <span class="material-symbols-outlined dropdown-icon">expand_more</span>
+                    <span class="material-symbols-outlined cloud-icon">cloud_done</span>
+                </div>
+                <button class="create-btn-small"><span class="material-symbols-outlined">add</span> Create</button>
+            </div>
+
+            <div class="nav-right">
+                <button class="icon-btn tooltip"><span class="material-symbols-outlined">search</span></button>
+                <button class="icon-btn tooltip"><span class="material-symbols-outlined">help</span></button>
+                <button class="icon-btn tooltip"><span class="material-symbols-outlined">apps</span></button>
+                <div class="avatar-container">
+                    <div class="profile-avatar"></div>
+                </div>
+                <!-- Action buttons -->
+                <button class="btn btn-outline">Share</button>
+                <button class="btn btn-solid">Create</button>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <div class="main-layout">
+
+            <!-- Icon Sidebar -->
+            <aside class="icon-sidebar">
+                <div class="nav-icons-top">
+                    <button class="icon-nav-btn"><span
+                            class="material-symbols-outlined">insights</span><span>Insights</span></button>
+                    <button class="icon-nav-btn"><span
+                            class="material-symbols-outlined">chat</span><span>Chat</span></button>
+                    <button class="icon-nav-btn"><span
+                            class="material-symbols-outlined">note_alt</span><span>Notes</span></button>
+                    <button class="icon-nav-btn active"><span
+                            class="material-symbols-outlined">description</span><span>Files</span></button>
+                    <button class="icon-nav-btn"><span
+                            class="material-symbols-outlined">cast</span><span>Present</span></button>
+                </div>
+            </aside>
+
+            <!-- Expanded Files Pane -->
+            <aside class="files-pane" id="main-files-pane">
+                <div class="pane-header">
+                    <h2>Files</h2>
+                    <button class="icon-btn small"><span class="material-symbols-outlined">close</span></button>
+                </div>
+                <p class="pane-subtitle">Add or select files and links to update your PDF Space.</p>
+
+                <div class="drag-drop-area">
+                    <span class="material-symbols-outlined">upload_file</span>
+                    <h4>Drag and drop your file</h4>
+                    <p>Or, <a href="#">select a file</a> from your computer.</p>
+                </div>
+
+                <div class="files-list-section">
+                    <h3 id="files-list-title" style="display: none;">Added 5 sources</h3>
+
+                    <!-- Files Loading State -->
+                    <div id="files-loading-state" class="files-loading-container">
+                        <span class="material-symbols-outlined spin-icon">sync</span>
+                        <span>Loading Relevant Files...</span>
+                    </div>
+
+                    <ul class="files-list" id="files-list" style="display: none; opacity: 0; transition: opacity 0.5s;">
+                        <li class="file-item active" onclick="openSourcePane('FW_Acme_SLA_Requirements.eml', 'Subject: FW: Acme Corp SLA Requirements\nFrom: VP of Sales\nTo: Legal Team\n\nMichael Chang mentioned they absolutely need 99.99% uptime due to their logistics dispatch system. Please ensure the draft reflects this.')">
+                            <span class="material-symbols-outlined file-type-icon">mail</span>
+                            <span class="file-name">FW_Acme_SLA_Requirements.eml</span>
+                        </li>
+                        <li class="file-item" onclick="openSourcePane('Acme_Account_Plan_SharePoint', 'Acme Corp 2026 Strategic Account Plan (SharePoint Site)\n\nKey Buyer Objectives: Secure 99.99% system reliability to prevent dispatch routing failures during peak Q3 shipping volume.')">
+                            <span class="material-symbols-outlined file-type-icon">language</span>
+                            <span class="file-name">Acme_Account_Plan (SharePoint)</span>
+                        </li>
+                        <li class="file-item"
+                            onclick="openSourcePane('Legal_Guidelines_2025.pdf', 'Guideline 8.4: For any enterprise deals over $20k ARR, the default limit of liability should be set at two times (2x) the contract value. Additionally, Mutual Indemnification is required for European subsidiaries.')">
+                            <span class="material-symbols-outlined file-type-icon">description</span>
+                            <span class="file-name">Legal_Guidelines_2025.pdf</span>
+                        </li>
+                        <li class="file-item"
+                            onclick="openSourcePane('Cohort_Logistics_NorthAmerica.pdf', '8. Liability Cap. The cumulative liability of either party... shall not exceed two times (2x) the total fees paid under this Agreement.')">
+                            <span class="material-symbols-outlined file-type-icon">description</span>
+                            <span class="file-name">Cohort_Logistics_NorthAmerica.pdf</span>
+                        </li>
+                        <li class="file-item"
+                            onclick="openSourcePane('Cohort_Software_Enterprise.pdf', 'SLA Addendum: Uptime adjusted to 99.99%. Indemnification phrasing strictly per Exhibit C (Mutual indemnification clauses).')">
+                            <span class="material-symbols-outlined file-type-icon">description</span>
+                            <span class="file-name">Cohort_Software_Enterprise.pdf</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Source Display Pane -->
+            <aside class="files-pane" id="source-pane" style="display: none;">
+                <div class="pane-header">
+                    <div style="display:flex; align-items:center;">
+                        <button class="icon-btn small" onclick="closeSourcePane()" style="margin-right:8px;"><span
+                                class="material-symbols-outlined" style="font-size:16px;">arrow_back</span></button>
+                        <h2 id="source-title"
+                            style="font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px;">
+                            Source File</h2>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; font-size: 13px;">
+                    <p style="font-weight: 600; margin-bottom: 8px;">Extracted Insight Context:</p>
+                    <div style="background-color: #FFFDE7; border-left: 3px solid #FBC02D; padding: 12px; border-radius: 4px; color: #333; line-height: 1.5;"
+                        id="source-text">
+                        Loading text...
+                    </div>
+                    <p id="source-footer"
+                        style="margin-top: 16px; font-size: 11px; color: var(--adobe-text-muted); line-height: 1.4;">
+                        This excerpt from the document was leveraged by the AI Assistant to generate the current insight
+                        or summary.</p>
+                </div>
+            </aside>
+
+            <!-- Central Content Workspace -->
+            <main class="workspace-area">
+
+                <div class="workspace-header">
+                    <h1 class="workspace-title">Acme Corp Enterprise Agreement Optimization</h1>
+                    <p class="workspace-subtitle">Ask AI Assistant a question or explore key insights from your files to
+                        build a foolproof contract.</p>
+                </div>
+
+                <!-- Loading State -->
+                <div id="ai-loading-state" class="ai-loading-container">
+                    <span class="material-symbols-outlined icon-sparkle spin-sparkle">auto_awesome</span>
+                    <h3>AI Assistant is analyzing...</h3>
+                    <p>Generating the optimized agreement based on Acme CRM data and past enterprise contracts.</p>
+                    <div class="loading-bar">
+                        <div class="loading-progress"></div>
+                    </div>
+                </div>
+
+                <!-- Insights Cards Container -->
+                <div id="cards-scroller" class="cards-scroller"
+                    style="display: none; opacity: 0; transition: opacity 0.5s;">
+
+                    <!-- Card 1 -->
+                    <div class="insight-card">
+                        <div class="card-header">
+                            <span class="material-symbols-outlined" style="color: var(--adobe-blue); font-size: 16px;">task_alt</span>
+                            <span class="card-type">Summary</span>
+                        </div>
+                        <h3 class="card-title">Draft Agreement Generated</h3>
+                        <p class="card-text">12-page base agreement has been generated in a standard template based on Acme Corp's CRM data & below relevant details from your organization.</p>
+                        <ul class="card-list">
+                            <li><strong>Client Data Sync:</strong> Contact details, company address, and primary billing information for Acme Corp have been successfully populated from the CRM.</li>
+                            <li><strong>Pricing Applied:</strong> The standard Enterprise Tier Q3 discount of 15% has been confirmed and applied to the pricing table.</li>
+                            <li><strong>Knowledge Hub Sourced:</strong> 5 reference sources (including Legal Guidelines, internal emails, and SharePoint data) have been automatically attached for context.</li>
+                        </ul>
+                        <div class="card-footer" style="padding-top: 12px;">
+                            <button class="btn" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; background: linear-gradient(135deg, #0265DC 0%, #004fb0 100%); color: #fff; border: none; border-radius: 24px; font-weight: 600; padding: 10px 16px; box-shadow: 0 4px 10px rgba(2,101,220,0.3); cursor: pointer; transition: all 0.2s;" onclick="openSourcePane('Draft_Agreement_v1.pdf', 'ENTERPRISE SERVICES AGREEMENT\n\nThis Agreement is entered into by and between Acme Corp (\'Client\') and Provider...\n\nExhibit A: Pricing Details - 15% Q3 Enterprise Promo.')">
+                                <span class="material-symbols-outlined" style="font-size: 18px;">visibility</span> View Draft Agreement
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="insight-card">
+                        <div class="card-header">
+                            <span class="material-symbols-outlined icon-sparkle">auto_awesome</span>
+                            <span class="card-type">Insights</span>
+                        </div>
+                        <h3 class="card-title">Historical & Legal Insights</h3>
+                        <ul class="card-list">
+                            <li><strong>Liability Alignment:</strong> Historical deals show similar enterprises negotiate a 2x liability cap. We recommend standardizing this upfront to avoid common redlines. <span class="citation" style="cursor: pointer;" onclick="openSourcePane('Cohort_Logistics_NorthAmerica.pdf', 'The cumulative liability of either party shall not exceed two times (2x) the total fees paid under this Agreement.')">1</span></li>
+                            <li><strong>Indemnification Clause:</strong> In 80% of similar deals (based on North American Logistics & Software cohorts), clients push back on Clause 4.2. Consider adopting the pre-approved mutual indemnification phrasing to skip the legal review cycle. <span class="citation" style="cursor: pointer;" onclick="openSourcePane('Cohort_Software_Enterprise.pdf', 'SLA Addendum: Uptime adjusted to 99.99%. Indemnification phrasing strictly per Exhibit C (Mutual indemnification clauses).')">2</span></li>
+                            <li><strong>SLA Upgrades:</strong> Internal emails and the SharePoint Account Plan confirm a strict requirement for 99.99% uptime. The current draft defaults to 99.9%. Update the SLA to match the client's needs. <span class="citation" style="cursor: pointer;" onclick="openSourcePane('FW_Acme_SLA_Requirements.eml', 'Michael Chang mentioned they absolutely need 99.99% uptime due to their logistics dispatch system.')">3</span> <span class="citation" style="cursor: pointer;" onclick="openSourcePane('Acme_Account_Plan_SharePoint', 'Key Buyer Objectives: Secure 99.99% system reliability to prevent dispatch routing failures.')">4</span></li>
+                            <li><strong>Compliance Reminder:</strong> European subsidiaries require the GDPR-compliant data security rider to be attached before sign-off. <span class="citation" style="cursor: pointer;" onclick="openSourcePane('Legal_Guidelines_2025.pdf', 'European subsidiaries require the GDPR-compliant rider attached before sign-off.')">5</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="insight-card">
+                        <div class="card-header">
+                            <span class="material-symbols-outlined" style="color: #e65100; font-size: 18px;">checklist</span>
+                            <span class="card-type">Recommended Actions</span>
+                        </div>
+                        <h3 class="card-title">Drafted Agreement Review</h3>
+                        <div class="card-table">
+                            <div class="table-row header">
+                                <span>Section</span>
+                                <span>Status</span>
+                            </div>
+                            <div class="table-row">
+                                <span>Client Details</span>
+                                <span class="status-ok">Populated</span>
+                            </div>
+                            <div class="table-row">
+                                <span>Pricing Table</span>
+                                <span class="status-warning">Review</span>
+                            </div>
+                            <div class="table-row">
+                                <span>SLA Upgrade</span>
+                                <span class="status-warning" style="background-color: #ffe0b2; color: #e65100; font-weight: 600; padding: 2px 6px; border-radius: 4px;">Action</span>
+                            </div>
+                            <div class="table-row">
+                                <span>Liability Cap</span>
+                                <span class="status-warning" style="background-color: #ffe0b2; color: #e65100; font-weight: 600; padding: 2px 6px; border-radius: 4px;">Action</span>
+                            </div>
+                            <div class="table-row">
+                                <span>Indemnification</span>
+                                <span class="status-warning" style="background-color: #ffe0b2; color: #e65100; font-weight: 600; padding: 2px 6px; border-radius: 4px;">Action</span>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="margin-top:auto; padding-top: 16px;">
+                            <div class="card-actions" style="width: 100%;">
+                                <button class="btn" onclick="alert('Proceeding to Adobe Acrobat Sign interface to route this contract for signatures...')" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; background: linear-gradient(135deg, #0265DC 0%, #004fb0 100%); color: #fff; border: none; border-radius: 24px; font-weight: 600; padding: 10px 16px; box-shadow: 0 4px 10px rgba(2,101,220,0.3); cursor: pointer; transition: all 0.2s;">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">draw</span> Send to Adobe Sign
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Chat Bottom Section -->
+                <div class="chat-interface-wrapper">
+                    <div id="highlight-prompts-wrapper" style="width: 100%;">
+                        <div id="suggested-prompts" class="suggested-prompts" style="display: none; opacity: 0; transition: opacity 0.5s;">
+                            <button class="prompt-chip"><span class="material-symbols-outlined">edit_document</span> Apply 2x Liability Cap to draft</button>
+                            <button class="prompt-chip"><span class="material-symbols-outlined">edit_document</span> Update SLA clause to 99.99%</button>
+                            <button class="prompt-chip"><span class="material-symbols-outlined">edit_document</span> Insert Mutual Indemnification clause</button>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input"
+                            placeholder="Ask a question or share what you'd like to work on">
+                        <div class="chat-input-controls">
+                            <button class="assistant-selector">
+                                <span class="material-symbols-outlined icon-sparkle">auto_awesome</span>
+                                Choose an AI Assistant
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </button>
+                            <div class="right-controls">
+                                <button class="icon-btn"><span class="material-symbols-outlined">mic</span></button>
+                                <button class="icon-btn send-btn"><span
+                                        class="material-symbols-outlined">send</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="disclaimer">Be sure to double-check responses as they may be inaccurate. <a
+                            href="#">Generative AI User Guidelines</a></p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Opening the Source text viewer
+        window.openSourcePane = function (title, text) {
+            document.getElementById('main-files-pane').style.display = 'none';
+            document.getElementById('source-pane').style.display = 'flex';
+            document.getElementById('source-title').innerText = title;
+            document.getElementById('source-text').innerText = text;
+            const footer = document.getElementById('source-footer');
+            if (footer) {
+                footer.innerHTML = `This excerpt from <a href="#" style="color: var(--adobe-blue); text-decoration: none; font-weight: 500;" title="View full document">${title}</a> was leveraged by the AI Assistant to generate the current insight or summary.`;
+            }
+        };
+
+        window.closeSourcePane = function () {
+            document.getElementById('source-pane').style.display = 'none';
+            document.getElementById('main-files-pane').style.display = 'flex';
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Sequence 1: Load files after 1.5 seconds (Simulating CRM data pull)
+            setTimeout(() => {
+                const filesLoader = document.getElementById('files-loading-state');
+                const filesList = document.getElementById('files-list');
+                const filesTitle = document.getElementById('files-list-title');
+
+                if (filesLoader && filesList && filesTitle) {
+                    filesLoader.style.display = 'none';
+                    filesTitle.style.display = 'block';
+                    filesList.style.display = 'block';
+
+                    setTimeout(() => {
+                        filesList.style.opacity = '1';
+                    }, 50);
+                }
+            }, 1500);
+
+            // Sequence 2: Load insight cards after 3.5 seconds (Simulating AI analysis)
+            setTimeout(() => {
+                const aiLoader = document.getElementById('ai-loading-state');
+                const cards = document.getElementById('cards-scroller');
+                const prompts = document.getElementById('suggested-prompts');
+
+                if (aiLoader && cards) {
+                    aiLoader.style.display = 'none';
+                    cards.style.display = 'flex';
+                    if (prompts) prompts.style.display = 'flex';
+
+                    setTimeout(() => {
+                        cards.style.opacity = '1';
+                        if (prompts) prompts.style.opacity = '1';
+
+                        // Tour setup
+                        setupTour();
+                    }, 50);
+                }
+            }, 3500);
+
+            function setupTour() {
+                const driver = window.driver.js.driver;
+                
+                const tour = driver({
+                    showProgress: true,
+                    steps: [
+                        {
+                            popover: {
+                                title: 'New PDF Space created to close deal with Acme Corp',
+                                description: 'Sales Rep can now leverage Acrobat PDF space to finalize an agreement using relevant context from the organization',
+                                side: "left", align: 'start'
+                            }
+                        },
+                        {
+                            element: '#main-files-pane',
+                            popover: {
+                                title: 'Integrated Knowledge Hub',
+                                description: 'All the relevant files, mails & Sharepoint links pertaining to Acme Corp are fetched here. Contracts from similar companies like Acme Corp and internal guidelines from Legal Team are also fetched to generate insights',
+                                side: "right", align: 'start'
+                            }
+                        },
+                        {
+                            element: '#cards-scroller .insight-card:nth-child(1)',
+                            popover: {
+                                title: 'Draft Agreement Generated',
+                                description: 'See the details of how the draft agreement was generated so that Sales Rep is aware of the context and can make changes if needed.',
+                                side: "bottom", align: 'start'
+                            }
+                        },
+                        {
+                            element: '#cards-scroller .insight-card:nth-child(2)',
+                            popover: {
+                                title: 'AI Insights',
+                                description: 'This card shares insights from the knowledge hub so that Sales Rep can learn from what others had done earlier and avoid to & fro of agreement with the client and other internal partners like Legal & Compliance teams',
+                                side: "bottom", align: 'start'
+                            }
+                        },
+                        {
+                            element: '#cards-scroller .insight-card:nth-child(3)',
+                            popover: {
+                                title: 'Recommended Actions',
+                                description: 'Based on the insights, see what are some recommended actions to generate the final agreement. One click button to send it to Adobe Sign workflow',
+                                side: "bottom", align: 'start'
+                            }
+                        },
+                        {
+                            element: '#highlight-prompts-wrapper',
+                            popover: {
+                                title: '1-Click Prompts',
+                                description: 'Sales Rep can update the agreement based on the insights by just clicking on these prompts',
+                                side: "top", align: 'start'
+                            }
+                        }
+                    ]
+                });
+
+                document.getElementById('start-tour-btn').addEventListener('click', () => {
+                    tour.drive();
+                });
+                
+                // Always open tour by default
+                tour.drive();
+            }
+        });
+    </script>
+    <!-- Guided Tour Button -->
+    <button id="start-tour-btn" style="position: fixed; bottom: 24px; right: 24px; z-index: 9998; background: #0265DC; color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; box-shadow: 0 4px 12px rgba(2,101,220,0.4); display: flex; align-items: center; gap: 8px; font-size: 14px; transition: transform 0.2s;">
+        <span class="material-symbols-outlined" style="font-size: 20px;">lightbulb</span> Take a Tour
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+</body>
+
+</html>
